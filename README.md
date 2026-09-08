@@ -4,7 +4,7 @@
 <!-- [这里插入图片：项目横幅或成果概览图] -->
 <!-- 建议图片：放一张最具视觉冲击力的 8K 原始图像与最终提取出分离角的对比图，或者带有金风科技/项目名称的精美 Banner。 --><img width="4753" height="3172" alt="DSC_7029_1_FULL_OVERLAY" src="https://github.com/user-attachments/assets/3255d565-0b32-4733-9d55-84d2ed1403d1" />
 
-![Project Banner/Overview](这里替换为你的图片相对路径或链接)
+
 
 [![Project Status](https://img.shields.io/badge/Status-Industrial%20R%26D%20Collaboration-blue)](#)
 [![Target Journal](https://img.shields.io/badge/Target-Wind%20Energy%20(Top%20Journal)-orange)](#)
