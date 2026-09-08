@@ -32,7 +32,7 @@ Developed in collaboration with **Goldwind (金风科技)**, this system automat
 
 <img width="1280" height="667" alt="图片1" src="https://github.com/user-attachments/assets/dd61c2a3-f733-4568-8d55-54d01778d3f2" />
 
-##🏗 Key Technical Highlights
+## 🏗 Key Technical Highlights
 1. Cascaded Segmentation Architecture
 ROI Decoupling: Deployed YOLOv8-Seg for coarse blade localization, eliminating complex background interference. Integrated GrabCut for micro-edge refinement to retain precise blade contours in 8K downsampled spaces.
 
@@ -52,9 +52,9 @@ Formulated projection variance maximization to calculate wool yarn orientation v
 
 Established dynamic reference coordinate systems anchored to blade edges, filtering stray noise through row/column geometric spacing constraints.
 
-##🔒 Confidentiality & NDA Notice
+## 🔒 Confidentiality & NDA Notice
 Notice: Due to Non-Disclosure Agreements (NDA) with corporate partners and ongoing journal review processes (Wind Energy), production source code, 8K raw datasets, and deployment models are hosted in a Private Repository.
 
 If you are a recruiter, researcher, or engineer interested in cascaded segmentation, industrial image processing, or dynamic reference math, feel free to reach out!
 
-📩 Contact: 2445165372@qq.com
+## 📩 Contact: 2445165372@qq.com
