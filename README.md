@@ -57,4 +57,4 @@ Notice: Due to Non-Disclosure Agreements (NDA) with corporate partners and ongoi
 
 If you are a recruiter, researcher, or engineer interested in cascaded segmentation, industrial image processing, or dynamic reference math, feel free to reach out!
 
-## 📩 Contact: 2445165372@qq.com
+## 📩 **Contact**: 2445165372@qq.com
