@@ -30,14 +30,8 @@ Developed in collaboration with **Goldwind (金风科技)**, this system automat
 <!-- 建议图片：放一张算法流水线图（Pipeline），展示从输入 8K 图像 -> YOLOv8 分割叶片 -> 自适应二值化 -> U-Net 提取毛线 -> 输出角度的完整流程图（如 PPT 中的架构图导出为 PNG）。 -->
 
 
-```mermaid
-flowchart LR<img width="1280" height="667" alt="图片1" src="https://github.com/user-attachments/assets/145fd4b9-2651-4c1e-b172-51c342874ad4" />
+<img width="1280" height="667" alt="图片1" src="https://github.com/user-attachments/assets/dd61c2a3-f733-4568-8d55-54d01778d3f2" />
 
-    A[8K Inspection Image] --> B[YOLOv8-Seg + GrabCut]
-    B -->|Blade ROI Mask| C[Adaptive Binarization]
-    C -->|Feature Dim Reduction| D[Binary-Space U-Net]
-    D -->|Yarn Masks| E[Spatial Clustering & Variance Fit]
-    E --> F[Deflection Angles & Stall Status]
 🏗 Key Technical Highlights
 1. Cascaded Segmentation Architecture
 ROI Decoupling: Deployed YOLOv8-Seg for coarse blade localization, eliminating complex background interference. Integrated GrabCut for micro-edge refinement to retain precise blade contours in 8K downsampled spaces.
