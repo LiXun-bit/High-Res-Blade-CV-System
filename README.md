@@ -28,10 +28,11 @@ Developed in collaboration with **Goldwind (金风科技)**, this system automat
 
 <!-- [这里插入图片：系统全流程架构图] -->
 <!-- 建议图片：放一张算法流水线图（Pipeline），展示从输入 8K 图像 -> YOLOv8 分割叶片 -> 自适应二值化 -> U-Net 提取毛线 -> 输出角度的完整流程图（如 PPT 中的架构图导出为 PNG）。 -->
-![Pipeline Architecture](这里替换为架构图的相对路径或链接)
+
 
 ```mermaid
-flowchart LR
+flowchart LR<img width="1280" height="667" alt="图片1" src="https://github.com/user-attachments/assets/145fd4b9-2651-4c1e-b172-51c342874ad4" />
+
     A[8K Inspection Image] --> B[YOLOv8-Seg + GrabCut]
     B -->|Blade ROI Mask| C[Adaptive Binarization]
     C -->|Feature Dim Reduction| D[Binary-Space U-Net]
