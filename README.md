@@ -1,41 +1,64 @@
-# High-Res-Blade-CV-System
-Industrial CV project with Goldwind: 8K wind blade image flow field quantification using YOLOv8-Seg &amp; U-Net cascade architecture. (Paper under review)
-# Ultra-High-Resolution Wind Blade Image Flow Field Quantification System
+# 🍃 Ultra-High-Resolution Wind Blade Flow Field Quantification System
+> Industrial CV project with Goldwind: 8K wind turbine blade image flow field quantification via YOLOv8-Seg & U-Net cascade architecture. *(Paper under review at **Wind Energy**)*
 
-[![Project Status](https://img.shields.io/badge/Status-Industrial%20Collaboration-blue)]()
-[![Target Journal](https://img.shields.io/badge/Target-Wind%20Energy%20(Top%20Journal)-orange)]()
-[![Role](https://img.shields.io/badge/Role-CV%20Algorithm%20Lead-green)]()
+<!-- [这里插入图片：项目横幅或成果概览图] -->
+<!-- 建议图片：放一张最具视觉冲击力的 8K 原始图像与最终提取出分离角的对比图，或者带有金风科技/项目名称的精美 Banner。 -->
+![Project Banner/Overview](这里替换为你的图片相对路径或链接)
+
+[![Project Status](https://img.shields.io/badge/Status-Industrial%20R%26D%20Collaboration-blue)](#)
+[![Target Journal](https://img.shields.io/badge/Target-Wind%20Energy%20(Top%20Journal)-orange)](#)
+[![Role](https://img.shields.io/badge/Role-CV%20Algorithm%20Lead-green)](#)
+
+---
 
 ## 📌 Project Overview
-This project is an industrial R&D collaboration with **Goldwind (金风科技)**. The goal is to achieve automated, high-precision measurement of deflection angles of extremely fine wool yarns on wind turbine blade surfaces using **8K high-definition inspection images**, providing core quantitative data for wind turbine stall analysis.
+Developed in collaboration with **Goldwind (金风科技)**, this system automates high-precision measurement of deflection angles of microscopic wool yarns (10–20 pixels) on wind turbine blade surfaces using **8K high-definition inspection images**. The quantitative flow-field output directly serves wind turbine stall detection and aerodynamic optimization.
 
-### 🎯 Key Challenges Addressed
-- **Extreme Resolution Interference:** Processing 8K images while capturing microscopic features (fine wool yarns) against complex and dynamic lighting backgrounds.
-- **High Computational Overhead:** Balancing real-time/efficient inference with heavy semantic segmentation loads.
-- **High Annotation Costs:** Overcoming the scarcity and high cost of pixel-level labels for tiny, complex structures.
-
----
-
-## 🏗 System Architecture & Technical Highlights
-
-### 1. Cascade Recognition Architecture (YOLOv8-Seg + U-Net)
-- **ROI Localization & Decoupling:** Leveraged **YOLOv8-Seg** for robust blade region-of-interest (ROI) extraction, successfully decoupling the blade from complex background interference.
-- **Topology Modeling via "Feature Dimensionality Reduction":** Innovatively proposed an adaptive binarization-guided U-Net framework to strip away complex shadow/lighting noise, achieving pixel-level segmentation of extremely fine wool yarns.
-- **Performance Metrics:** Achieved a **95% recall rate** with a **false positive rate of less than 2%** on real-world industrial test sets.
-
-### 2. Engineering Efficiency: Interactive Semi-Auto Annotation Tool
-- Developed an in-house interactive semi-automatic annotation program based on **connected component analysis (连通域分析).
-- Implemented an intuitive "click-and-draw" selection logic.
-- **Result:** Boosted single-image annotation efficiency by **20x**, drastically lowering data curation overhead for the team.
-
-### 3. Quantitative Analysis & Dynamic Reference Systems
-- Implemented spatial clustering algorithms for wool yarns.
-- Established a dynamic reference coordinate system to automatically compute precise deflection angles.
-- Validated rigorously through Goldwind's business and operational standards.
+### 📊 Key Performance Indicators (KPIs)
+| Metric | Performance | Remarks |
+| :--- | :--- | :--- |
+| **Wool Yarn Recall** | **> 95%** | Evaluated on 80 real inspection scenes (22,326 yarn targets) |
+| **False Positive Rate** | **< 2%** | Robust against extreme dark/bright lighting & line-array noise |
+| **Annotation Efficiency** | **20x Boost** | Reduced single-image labeling time from 10 mins to **< 30 secs** |
 
 ---
 
-## 🔒 Confidentiality Notice
-> **Note:** Due to strict Non-Disclosure Agreements (NDA) with corporate partners and pending academic submissions (*Wind Energy*), the production-level source code, proprietary 8K datasets, and deployment scripts are kept in a **Private Repository**. 
-> 
-> If you are a recruiter or researcher interested in discussing the algorithm design (Cascade Segmentation, Feature Dimensionality Reduction, or Industrial CV Engineering), feel free to contact me at **2445165372@qq.com!
+## ⚙️ Pipeline Architecture
+
+<!-- [这里插入图片：系统全流程架构图] -->
+<!-- 建议图片：放一张算法流水线图（Pipeline），展示从输入 8K 图像 -> YOLOv8 分割叶片 -> 自适应二值化 -> U-Net 提取毛线 -> 输出角度的完整流程图（如 PPT 中的架构图导出为 PNG）。 -->
+![Pipeline Architecture](这里替换为架构图的相对路径或链接)
+
+```mermaid
+flowchart LR
+    A[8K Inspection Image] --> B[YOLOv8-Seg + GrabCut]
+    B -->|Blade ROI Mask| C[Adaptive Binarization]
+    C -->|Feature Dim Reduction| D[Binary-Space U-Net]
+    D -->|Yarn Masks| E[Spatial Clustering & Variance Fit]
+    E --> F[Deflection Angles & Stall Status]
+🏗 Key Technical Highlights
+1. Cascaded Segmentation Architecture
+ROI Decoupling: Deployed YOLOv8-Seg for coarse blade localization, eliminating complex background interference. Integrated GrabCut for micro-edge refinement to retain precise blade contours in 8K downsampled spaces.
+
+Binary-Space Topology U-Net: Innovatively shifted training from RGB space to a binary-texture space based on the premise that color/shadow is noise, structural geometry is signal.
+
+RGB Space Accuracy: < 30% (severe overfitting to dynamic lighting)
+
+Binary Space Accuracy: > 90% (invariant to shadows and strong reflections)
+
+2. Interactive Semi-Automated Annotation Tool
+Engineered a tailored GUI tool using Connected Component Analysis (CCA) and "click-and-draw" selection logic.
+
+Enabled zero-threshold, pixel-level line selection, lowering dataset curation overhead by 95%.
+
+3. Quantitative Post-Processing & Angle Calculation
+Formulated projection variance maximization to calculate wool yarn orientation vectors.
+
+Established dynamic reference coordinate systems anchored to blade edges, filtering stray noise through row/column geometric spacing constraints.
+
+🔒 Confidentiality & NDA Notice
+Notice: Due to Non-Disclosure Agreements (NDA) with corporate partners and ongoing journal review processes (Wind Energy), production source code, 8K raw datasets, and deployment models are hosted in a Private Repository.
+
+If you are a recruiter, researcher, or engineer interested in cascaded segmentation, industrial image processing, or dynamic reference math, feel free to reach out!
+
+📩 Contact: 2445165372@qq.com
